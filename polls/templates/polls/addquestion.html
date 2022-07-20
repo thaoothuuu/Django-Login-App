@@ -1,0 +1,11 @@
+{% extends "polls/base.html" %}
+{% block content %}
+    <form action="{% url 'polls:savequestionclass' %}" method="POST">
+        {% csrf_token %}
+<!--        {{ f }}-->
+        <p>Question: {{ f.question_text }}</p>
+        <p>Time push: {{ f.time_pub }}</p>
+        <input type="submit" value="Thêm">
+        <a href="{% url 'polls:question' %}"><h3>Quay lại</h3></a>
+    </form>
+{% endblock %}

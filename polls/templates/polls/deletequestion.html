@@ -1,0 +1,9 @@
+{% extends "polls/base.html" %}
+{% block content %}
+    {% if qs %}
+    <form action="{% url 'polls:vote' qs.id %}" method="POST">
+        {% csrf_token %}
+    </form>
+    {% endif %}
+    <a href="{% url 'polls:question' %}"><h3>Quay lại</h3></a>
+{% endblock %}

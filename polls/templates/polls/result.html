@@ -1,0 +1,9 @@
+{% extends "polls/base.html" %}
+{% block content %}
+    <h2>{{ qs.question_text }}</h2>
+<!--    <p>{{ ch.choice_text }}:{{ ch.vote }}</p>-->
+     {% for choice in qs.choice_set.all %}
+        <p>{{ choice.choice_text }}:{{ choice.vote }}</p>
+    {% endfor %}
+    <a href="{% url 'polls:question' %}"><p>Tiếp tục vote</p></a>
+{% endblock %}

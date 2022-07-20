@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>WELCOME</title>
+<!--    <style>-->
+<!--        .header{-->
+<!--            padding: 30px;-->
+<!--            background-color: #CCC;-->
+<!--            color: #FFF-->
+<!--        }-->
+<!--            .footer{-->
+<!--            padding: 20px;-->
+<!--            background-color: #CCC;-->
+<!--            color: #FFF-->
+<!--        }-->
+<!--    </style>-->
+
+    <link rel="stylesheet" href="{% static 'polls/style.css' %}">
+<!--    <link rel="stylesheet" href="static/polls/style.css">-->
+</head>
+<body>
+    <div class="header">
+        <h1>WELCOME TO MY FIRST WEBSITE USING DJANGO</h1>
+    </div>
+    <div class="content">
+        {% block content %}
+        {% endblock %}
+    </div>
+    <div class="footer">
+        <h3>THIS IS THE END OF MY WEBSITE</h3>
+    </div>
+</body>
+</html>

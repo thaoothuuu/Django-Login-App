@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form action="{% url 'login:addpost' %}" method="post">
+        {% csrf_token %}
+        <p>Title: {{ f.title }}</p>
+        <p>Content: {{ f.content }}</p>
+        <input type="submit" value="Thêm">
+    </form>
+</body>
+</html>

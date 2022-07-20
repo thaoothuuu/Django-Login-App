@@ -1,0 +1,11 @@
+{% extends "polls/base.html" %}
+{% block content %}
+    {% if lq %}
+        {% for item in lq %}
+            <a href="{% url 'polls:detail' item.id %}"><p>{{ item.question_text }}</p></a>
+        {% endfor %}
+    {% endif %}
+<a href="{% url 'polls:savequestionclass' %}"><h3>Thêm câu hỏi</h3></a>
+<a href="{% url 'polls:index' %}"><h3>Quay lại</h3></a>
+
+{% endblock %}

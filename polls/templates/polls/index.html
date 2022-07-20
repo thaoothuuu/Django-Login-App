@@ -1,0 +1,21 @@
+{% extends "polls/base.html" %}
+
+{% block content %}
+    <H2>CURRENT DATE AND CURRENT TIME IS: {{ day }}</H2>
+    <h3>HI! I'M {{ name }}</h3>
+    <h3>MY HOBBIES ARE:</h3>
+    <ul>
+        {% for item in hobbies %}
+            <li>{{ item }}</li>
+        {% endfor %}
+    </ul>
+
+    <h3>I HAVE:</h3>
+    <ul>
+        {% for key, value in asset.items %}
+            <li>{{ key }}: {{ value }}</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'polls:question' %}"><p>Đi đến vote</p></a>
+
+{% endblock %}
