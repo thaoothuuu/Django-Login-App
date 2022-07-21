@@ -1,6 +1,6 @@
 {% extends "polls/base.html" %}
 {% block content %}
     <p>{{ qs }}</p>
-    <a href="{% url 'polls:choiceform' %}"><h3>Thêm lựa chọn</h3></a>
+
     <a href="{% url 'polls:question' %}"><h3>Quay lại</h3></a>
 {% endblock %}

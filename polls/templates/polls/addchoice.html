@@ -1,8 +1,10 @@
 {% extends "polls/base.html" %}
 {% block content %}
-    <form action="" method="POST">
+    <form action="{% url 'polls:savechoice' %}" method="POST">
         {% csrf_token %}
+        <p>Question: {{ c.question }}</p>
         <p>Choice: {{ c.choice_text }}</p>
         <input type="submit" value="Thêm">
     </form>
+    <a href="{% url 'polls:question' %}"><h3>Quay lại</h3></a>
 {% endblock %}

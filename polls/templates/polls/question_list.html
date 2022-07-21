@@ -6,6 +6,7 @@
         {% endfor %}
     {% endif %}
 <a href="{% url 'polls:savequestionclass' %}"><h3>Thêm câu hỏi</h3></a>
+<a href="{% url 'polls:savechoice' %}"><h3>Thêm lựa chọn</h3></a>
 <a href="{% url 'polls:index' %}"><h3>Quay lại</h3></a>
 
 {% endblock %}

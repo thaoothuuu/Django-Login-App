@@ -86,7 +86,6 @@ class savequestionclass(View):
         context = {'f': a}
         return render(request, template_name='polls/addquestion.html', context=context)
 
-
     def post(self, request):
         g = QuestionForm(request.POST)
         if g.is_valid():
@@ -97,7 +96,6 @@ class savequestionclass(View):
         else:
             return HttpResponse("Nhập sai")
 
-
     # def delete(self, request):
     #     q = self.get_object()
     #     q.delete()
@@ -106,17 +104,40 @@ class savequestionclass(View):
     #     return render(request, template_name='polls/question_list.html', context=context)
 
 
+# def choiceform(request):
+#     c = ChoiceForm()
+#     context = {
+#         'c': c,
+#     }
+#     return render(request, template_name='polls/addchoice.html', context=context)
 
 
+# def addchoice(request):
+#     if request.method == 'POST':
+#         c = ChoiceForm(request.POST)
+#         if c.is_valid():
+#             c.save()
+#             list_question = Question.objects.all()
+#             context = {'lq': list_question}
+#             return render(request, template_name='polls/question_list.html', context=context)
+#         else:
+#             return HttpResponse("Fail to save")
+#     else:
+#         return HttpResponse("Fail to save")
 
-def choiceform(request):
-    c = ChoiceForm()
-    context = {
-        'c': c,
-    }
-    return render(request, template_name='polls/addchoice.html', context=context)
 
+class SaveChoice(View):
+    def get(self, request):
+        cf = ChoiceForm()
+        context = {'c': cf}
+        return render(request, template_name='polls/addchoice.html', context=context)
 
-def addchoice(request, q_id):
-    q = Question.objects.get(pk=q_id)
-    c = q.choice_set.all
+    def post(self, request):
+        c = ChoiceForm(request.POST)
+        if c.is_valid():
+            c.save()
+            list_question = Question.objects.all()
+            context = {'lq': list_question}
+            return render(request, template_name='polls/question_list.html', context=context)
+        else:
+            return HttpResponse("Fail to save")

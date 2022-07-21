@@ -15,4 +15,4 @@ class QuestionForm(forms.ModelForm):
 class ChoiceForm(forms.ModelForm):
     class Meta:
         model = Choice
-        fields = ('choice_text',)
+        fields = ('question', 'choice_text', )

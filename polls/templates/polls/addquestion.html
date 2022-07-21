@@ -4,7 +4,7 @@
         {% csrf_token %}
 <!--        {{ f }}-->
         <p>Question: {{ f.question_text }}</p>
-        <p>Question: {{ f.time_pub }}</p>
+        <p>Date and Time: {{ f.time_pub }}</p>
         <input type="submit" value="Thêm">
         <a href="{% url 'polls:question' %}"><h3>Quay lại</h3></a>
     </form>

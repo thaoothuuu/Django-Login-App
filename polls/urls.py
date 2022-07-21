@@ -11,8 +11,9 @@ urlpatterns = [
     # path('addquestion/', views.addquestion, name='addquestion'),
     path('savequestionclass/', views.savequestionclass.as_view(), name='savequestionclass'),
     path('deletequestion/<int:q_id>', views.deletequestion, name='deletequestion'),
-    path('choiceform/', views.choiceform, name='choiceform'),
-    path('addchoice/<int:q_id>', views.addchoice, name='addchoice'),
+    # path('choiceform/', views.choiceform, name='choiceform'),
+    # path('addchoice/', views.addchoice, name='addchoice'),
+    path('savechoice/', views.SaveChoice.as_view(), name='savechoice')
 
 
 ]

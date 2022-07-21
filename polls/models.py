@@ -19,4 +19,4 @@ class Choice(Model):
     choice_text = models.CharField(max_length=100)
     vote = models.IntegerField(default=0)
     def __str__(self):
-        return self.question, self.choice_text, self.vote
+        return self.choice_text
