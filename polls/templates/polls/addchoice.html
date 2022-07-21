@@ -1,6 +1,6 @@
 {% extends "polls/base.html" %}
 {% block content %}
-    <form method="POST">
+    <form action="" method="POST">
         {% csrf_token %}
         <p>Choice: {{ c.choice_text }}</p>
         <input type="submit" value="Thêm">
