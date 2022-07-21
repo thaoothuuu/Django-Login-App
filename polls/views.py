@@ -4,6 +4,8 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from .forms import QuestionForm, ChoiceForm
 from django.views import View
+from django.contrib.auth import authenticate, login, decorators
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 
 # Create your views here.
@@ -23,6 +25,7 @@ class indexclass(View):
         return render(request, template_name='polls/index.html', context=context)
 
 
+@decorators.login_required(login_url='/login/login')
 def viewlist(request):
     list_question = Question.objects.all()
     context = {'lq': list_question}

@@ -21,7 +21,6 @@ class Loginclass(View):
         if user is not None:
             login(request, user)
             return render(request, 'login/loginsuccess.html')
-
         else:
             return HttpResponse('Không tồn tại user')
 
